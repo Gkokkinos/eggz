@@ -9,7 +9,7 @@ public class facebookInit : MonoBehaviour {
 
 	public string toId;
 	private int scores;
-    // Awake function from Unity's MonoBehavior
+   
     void Awake()
     {
         FB.Init(SetInit, OnHideUnity);
@@ -67,13 +67,11 @@ public class facebookInit : MonoBehaviour {
     public void FBshare(){
 		FB.ShareLink(
 			//string.Empty, //toId
-			new System.Uri("https://play.google.com/store/apps/details?id=com.George.Kokkinos"), //link
-		//	"Eggz", //linkName
-			//"LinkCaption", //linkCaption
+			new System.Uri("https://play.google.com/store/apps/details?id=com.George.Kokkinos"), 
+			//"LinkCaption"
 			scores.ToString(),
 			"My highest score in eggs", //linkDescription
 			new System.Uri("http://i.imgur.com/I3X1fMB.png"), //picture
-			//string.Empty, //mediaSource
 			FeedCallback //callback
 			);
 	}
